@@ -1,29 +1,88 @@
 /* Custom styles for Amarpreet Bhatia Portfolio */
 .profile-img {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #fff;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  border: 6px solid #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   margin-bottom: 20px;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
 }
+.profile-img:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+}
+
+/* Navbar styles and animation */
+.navbar {
+  font-size: 1.1rem;
+  background: rgba(255,255,255,0.98) !important;
+  transition: box-shadow 0.3s;
+}
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.nav-link {
+  color: #007bff !important;
+  margin-left: 1rem;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: #0056b3 !important;
+}
+
+.bg-header {
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff;
+  padding: 2.5rem 0 1.5rem 0;
+  margin-bottom: 2rem;
+  animation: headerFadeIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes headerFadeIn {
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 .section-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #2c3e50;
+  position: relative;
+  display: inline-block;
+  animation: fadeInLeft 1s;
 }
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+  animation: underlineGrow 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes underlineGrow {
+  0% { width: 0; }
+  100% { width: 60px; }
+}
+
 .card {
   margin-bottom: 1.5rem;
+  animation: fadeInUp 0.9s;
 }
-.bg-header {
-  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
-  color: #fff;
-  padding: 2.5rem 0 1.5rem 0;
-  margin-bottom: 2rem;
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
+
 .email-link {
   color: #fff;
   text-decoration: underline;
