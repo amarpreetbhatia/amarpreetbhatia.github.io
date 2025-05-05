@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Cover Image - Amarpreet Bhatia v2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Styles for previewing the banner */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            background-color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Container matching LinkedIn cover aspect ratio (1584x396) */
+        .linkedin-cover {
+            width: 1584px;
+            height: 396px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right, #1E3A8A, #3B82F6); /* Deep blue to lighter blue */
+            color: #FFFFFF;
+        }
+
+        /* Abstract Flowing Background Element (SVG) */
+        .flow-background {
+            position: absolute;
+            bottom: -50px; /* Start lower */
+            left: -100px; /* Start off-screen left */
+            width: 120%; /* Wider than the container */
+            height: 100%;
+            opacity: 0.15; /* Subtle but visible */
+            z-index: 1;
+            pointer-events: none;
+        }
+
+         /* Main Content Area - Using Flexbox for alignment */
+        .content-area {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            padding: 40px 60px; /* Add padding around the edges */
+            display: flex;
+            justify-content: space-between; /* Space out left/right content */
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        /* Left Area - Kept minimal for profile pic */
+        .left-area {
+            width: 30%; /* Allocate less space */
+            /* Can add a very subtle element here if desired, but keeping clear */
+        }
+
+        /* Right Area - Main focus */
+        .right-area {
+            width: 65%; /* Allocate more space */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align text content to the right */
+            text-align: right;
+        }
+
+        /* Name and Title */
+        .header-info {
+            margin-bottom: 30px;
+        }
+
+        .header-info .name {
+            font-size: 42px;
+            font-weight: 700; /* Bold */
+            color: #FFFFFF;
+            margin-bottom: 5px;
+        }
+
+        .header-info .title {
+            font-size: 20px;
+            font-weight: 600; /* Semi-bold */
+            color: #E0E0E0; /* Slightly dimmer white */
+            line-height: 1.4;
+        }
+
+        /* Skills Showcase Section */
+        .skills-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px 30px; /* Row and column gap */
+            margin-bottom: 30px;
+            width: 100%; /* Take full width of right area */
+            text-align: right;
+        }
+
+        .skill-item {
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+            padding: 10px 15px;
+            border-radius: 6px;
+            border-left: 3px solid #FFFFFF; /* White accent line */
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-item:hover {
+             background-color: rgba(255, 255, 255, 0.2); /* Slightly brighter on hover */
+        }
+
+        .skill-item .skill-name {
+            font-size: 15px;
+            font-weight: 600; /* Semi-bold */
+            color: #FFFFFF;
+        }
+
+        .skill-item .skill-keywords {
+            font-size: 12px;
+            font-weight: 400;
+            color: #D1D5DB; /* Light Gray */
+            margin-top: 4px;
+            line-height: 1.3;
+        }
+
+        /* Attributes and Intent Section */
+        .attributes-intent {
+            background-color: rgba(0, 0, 0, 0.2); /* Darker transparent background */
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #E0E0E0;
+            margin-top: 10px; /* Space above this section */
+        }
+         .attributes-intent strong {
+            color: #FFFFFF; /* Make keywords stand out */
+            font-weight: 600;
+         }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="linkedin-cover">
+        <svg class="flow-background" viewBox="0 0 1600 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M -100,350 Q 200,100 500,250 T 900,150 T 1300,300 T 1700,100 L 1700,450 L -100,450 Z" fill="#FFFFFF"/>
+            <path d="M -100,380 Q 250,150 550,280 T 950,180 T 1350,330 T 1700,130 L 1700,450 L -100,450 Z" fill="#FFFFFF" opacity="0.5"/>
+        </svg>
+
+        <div class="content-area">
+            <div class="left-area">
+                </div>
+
+            <div class="right-area">
+                <div class="header-info">
+                    <div class="name">Amarpreet Bhatia</div>
+                    <div class="title">Lead Engineer | Solution Architect | AI & Cloud Innovator</div>
+                </div>
+
+                <div class="skills-showcase">
+                    <div class="skill-item">
+                        <div class="skill-name">Core Development</div>
+                        <div class="skill-keywords">Java, Spring Boot, Python, React</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Architecture & Design</div>
+                        <div class="skill-keywords">Solution Design, Microservices, Design & Event Patterns</div>
+                    </div>
+                     <div class="skill-item">
+                        <div class="skill-name">Cloud & DevOps</div>
+                        <div class="skill-keywords">AWS, Kubernetes, CI/CD, Infrastructure</div>
+                    </div>
+                     <div class="skill-item">
+                        <div class="skill-name">AI & Machine Learning</div>
+                        <div class="skill-keywords">AI Integration, ML Concepts, Python AI Libs</div>
+                    </div>
+                     <div class="skill-item">
+                        <div class="skill-name">Digital Transformation</div>
+                        <div class="skill-keywords">Modernization, Process Automation, Scalability</div>
+                    </div>
+                     <div class="skill-item">
+                        <div class="skill-name">FinTech Expertise</div>
+                        <div class="skill-keywords">Payments, Banking Systems, Compliance</div>
+                    </div>
+                </div>
+
+                <div class="attributes-intent">
+                    Collaborative <strong>Team Player</strong> & Lifelong Learner | Driving Innovation in <strong>FinTech</strong> & <strong>AI</strong><br/>
+                    Open to <strong>AI Specialist</strong> & Senior <strong>Technical Leadership</strong> Roles – Let's Connect!
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
