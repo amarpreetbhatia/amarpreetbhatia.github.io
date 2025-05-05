@@ -1,0 +1,35 @@
+/* Custom styles for Amarpreet Bhatia Portfolio */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+.card {
+  margin-bottom: 1.5rem;
+}
+.bg-header {
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff;
+  padding: 2.5rem 0 1.5rem 0;
+  margin-bottom: 2rem;
+}
+.email-link {
+  color: #fff;
+  text-decoration: underline;
+}
+.linkedin-link {
+  color: #fff;
+  text-decoration: underline;
+  margin-left: 10px;
+}
