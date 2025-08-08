@@ -17,7 +17,13 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['aboutme', 'skills', 'experience', 'education', 'certifications', 'contact']
-      const scrollPosition = window.scrollY + 100
+      const scrollPosition = window.scrollY + 200
+
+      // Check if we're at the top (hero section)
+      if (scrollPosition < 300) {
+        setActiveSection('')
+        return
+      }
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -39,46 +45,79 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-900 to-orange-600">
-      {/* Header with Banner */}
-      <header className="relative" role="banner">
-        <div className="relative">
-          <img 
-            src="/banner-image-2.png" 
-            alt="Amarpreet Bhatia - Principal Cloud Architect and AI Architect in Sydney Australia" 
-            className="w-full max-h-[350px] object-cover block"
-          />
-          {/* Navigation Bar */}
-          <nav className="absolute left-0 right-0 bottom-0 z-10 bg-white/98 backdrop-blur-sm shadow-sm">
-            <div className="container mx-auto px-4">
-              <div className="flex justify-end">
-                <div className="flex space-x-6 py-4">
-                  {[
-                    { id: 'aboutme', label: 'About Me' },
-                    { id: 'skills', label: 'Skills' },
-                    { id: 'experience', label: 'Experience' },
-                    { id: 'education', label: 'Education' },
-                    { id: 'certifications', label: 'Certifications' },
-                    { id: 'contact', label: 'Contact' }
-                  ].map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className={`text-sm font-medium transition-colors hover:text-orange-600 ${
-                        activeSection === item.id ? 'text-orange-600' : 'text-gray-600'
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
+      {/* Header */}
+      <header className="relative z-50 bg-white/95 backdrop-blur-sm shadow-sm" role="banner">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center py-4">
+                         {/* Profile Picture */}
+             <div className="flex items-center">
+               <img 
+                 src="/profile_pic.png" 
+                 alt="This is Amarpreet Bhatia's Portfolio website" 
+                 className="w-20 h-20 rounded-full object-cover border-3 border-orange-300 shadow-lg"
+               />
+             </div>
+            
+            {/* Navigation Menu */}
+            <nav>
+              <div className="flex space-x-8">
+                {[
+                  { id: 'aboutme', label: 'About Me' },
+                  { id: 'skills', label: 'Skills' },
+                  { id: 'experience', label: 'Experience' },
+                  { id: 'education', label: 'Education' },
+                  { id: 'certifications', label: 'Certifications' },
+                  { id: 'contact', label: 'Contact' }
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`text-sm font-medium transition-colors hover:text-orange-600 ${
+                      activeSection === item.id ? 'text-orange-600' : 'text-gray-700'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
-            </div>
-          </nav>
+            </nav>
+          </div>
         </div>
       </header>
 
+      {/* Hero Section */}
+      <section className="relative py-20 px-4">
+        <div className="container mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight animate-in fade-in-50 duration-700">
+            Driving the Next Wave of Digital Transformation.
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-in fade-in-50 duration-700 delay-200">
+            As a Principal Engineer at the intersection of Cloud Architecture, Platform Engineering, and Generative AI, I help organizations modernize their technology, automate their processes, and unlock new value.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in-50 duration-700 delay-300">
+            <Button 
+              onClick={() => scrollToSection('experience')}
+              className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-3 text-lg font-semibold"
+            >
+              View My Work
+            </Button>
+                         <Button 
+               asChild
+               className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-3 text-lg font-semibold"
+             >
+               <a href="https://www.linkedin.com/in/amarpreetbhatia/" target="_blank" rel="noopener noreferrer">
+                 <Linkedin className="w-5 h-5 mr-2" />
+                 Connect on LinkedIn
+               </a>
+             </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-16">
         {/* About Me Section */}
         <section id="aboutme" className="mb-12">
           <h1 className="text-3xl font-semibold text-white mb-6 relative">
