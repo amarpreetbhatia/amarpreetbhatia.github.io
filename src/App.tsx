@@ -4,6 +4,7 @@ import { Button } from './components/ui/button'
 import { Linkedin, Mail, Github } from 'lucide-react'
 import AboutMe from './components/AboutMe'
 import SkillInfo from './components/SkillInfo'
+import ExperienceInfo from './components/ExperienceInfo'
 
 function App() {
   const [activeSection, setActiveSection] = useState('aboutme')
@@ -123,66 +124,11 @@ function App() {
                   {/* About Me Section */}
          <AboutMe />
 
-         {/* Skills Section */}
-         <SkillInfo />
+                   {/* Skills Section */}
+          <SkillInfo />
 
-        {/* Experience Section */}
-        <section id="experience" className="mb-12">
-          <h2 className="text-3xl font-semibold text-white mb-6 relative">
-            Professional Experience
-            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
-          </h2>
-          <div className="space-y-6">
-            {[
-              {
-                title: "Senior Engineer / Technical Lead, Financial Institute",
-                points: [
-                  "Led technical delivery across multiple scrum teams on cloud-native, microservices, and micro frontend initiatives to simplify banking platforms.",
-                  "Architected and developed scalable REST APIs using Java, Spring Boot, and AWS integrations for enterprise-grade banking applications.",
-                  "Led proof-of-concept initiatives for emerging technologies, delivering MVPs to production and presenting solutions to program stakeholders as part of Westpac One initiative.",
-                  "Implemented robust SSO authentication using OAuth 2.0 and OIDC protocols via PingOne SaaS.",
-                  "Provided technical leadership, code reviews, mentorship, and architectural guidance across cross-functional teams.",
-                  "Championed DevOps practices, automating deployments via Bamboo pipelines to Azure Kubernetes Service (Westpac Mesh), cutting deployment time by 50%.",
-                  "Mentored a team of 8 engineers, conducting training on cloud architecture and best practices, elevating team capability.",
-                  "Drafted Swagger specifications and technical design documents, ensuring compliance with banking standards and facilitating cross-team collaboration."
-                ]
-              },
-              {
-                title: "Senior Technical Lead, Financial Institute",
-                points: [
-                  "Led the design and development of modernization of legacy application, an end-to-end batch processing solution for branch data reconciliation with downstream systems, enabling data migration for Westpac and its subsidiaries.",
-                  "Authored technical documents, including high-level and low-level diagrams, solution and architecture diagrams, and Architecture Decision Records (ADRs)."
-                ]
-              },
-              {
-                title: "Principal Engineering Lead",
-                points: [
-                  "Provided leadership across digital banking projects by designing full-stack cloud solutions using Java, Spring Boot, NodeJS, ReactJS, and microservices architecture.",
-                  "Architected event-driven systems using CQRS patterns and Axon framework, ensuring scalable, high-performing applications.",
-                  "Implemented API strategies via Apigee for enterprise integration and managed gateway security and compliance.",
-                  "Mentored developers, facilitated agile ceremonies, and promoted engineering excellence through code reviews and technical sessions.",
-                  "Led initiatives for serverless deployments using AWS Lambda and cloud-native patterns."
-                ]
-              }
-            ].map((job, index) => (
-              <Card key={index} className="animate-in fade-in-50 duration-500">
-                <CardHeader>
-                  <CardTitle className="text-xl text-orange-600">{job.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-gray-700">
-                    {job.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <span className="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+          {/* Experience Section */}
+          <ExperienceInfo />
 
         {/* Education Section */}
         <section id="education" className="mb-12">
