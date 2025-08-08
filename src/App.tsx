@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
 import { Button } from './components/ui/button'
 import { Linkedin, Mail, Github } from 'lucide-react'
 import AboutMe from './components/AboutMe'
+import SkillInfo from './components/SkillInfo'
 
 function App() {
   const [activeSection, setActiveSection] = useState('aboutme')
@@ -119,28 +120,11 @@ function App() {
 
              {/* Main Content */}
        <main className="container mx-auto px-4 py-16">
-         {/* About Me Section */}
+                  {/* About Me Section */}
          <AboutMe />
 
-        {/* Skills Section */}
-        <section id="skills" className="mb-12">
-          <h2 className="text-3xl font-semibold text-white mb-6 relative">
-            Core Competencies - Full-Stack Solutions Designer
-            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
-          </h2>
-          <Card className="animate-in fade-in-50 duration-500">
-            <CardContent className="p-6">
-              <ul className="space-y-2 text-gray-700">
-                <li><strong>Hands on Java and React Developer:</strong> Java, Spring Boot, NodeJS, ReactJS, Typescript, Redux, Swagger API, Kafka</li>
-                <li><strong>Principal Solution Architect:</strong> Microservices Architecture | API Design | Cloud Platforms (AWS, GCP)</li>
-                <li><strong>AWS Architect & GCP Architect:</strong> DevOps | CI/CD Automation (Bamboo, Jenkins, Git) | Docker | Kubernetes</li>
-                <li><strong>AI Architect:</strong> Leadership and Mentoring | Agile/Scrum | Technical Strategy Development</li>
-                <li><strong>Principal Cloud Architect:</strong> Digital Transformation | Legacy Modernization | Event-Driven Architectures</li>
-                <li>Authentication & Authorization (OAuth2, OIDC, PingOne)</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
+         {/* Skills Section */}
+         <SkillInfo />
 
         {/* Experience Section */}
         <section id="experience" className="mb-12">
