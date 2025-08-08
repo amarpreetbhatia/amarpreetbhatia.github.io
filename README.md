@@ -68,7 +68,6 @@ npm run dev
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
-- `npm run deploy` - Build and deploy to GitHub Pages
 
 ## 🎯 Sections
 
@@ -108,14 +107,9 @@ The built files will be in the `dist/` directory, ready for deployment.
 
 ### GitHub Pages Deployment
 
-This project is configured for automatic deployment to GitHub Pages.
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
 
-#### Option 1: Manual Deployment
-```bash
-npm run deploy
-```
-
-#### Option 2: Automatic Deployment (Recommended)
+#### Automatic Deployment
 The site automatically deploys when you push to the `main` branch via GitHub Actions.
 
 1. Push your changes to the main branch

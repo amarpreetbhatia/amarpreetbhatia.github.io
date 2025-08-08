@@ -1,6 +1,6 @@
 # 🚀 GitHub Pages Deployment Guide
 
-This guide will help you deploy your portfolio website to GitHub Pages.
+This guide will help you deploy your portfolio website to GitHub Pages using the latest GitHub Actions workflow.
 
 ## 📋 Prerequisites
 
@@ -26,51 +26,39 @@ This guide will help you deploy your portfolio website to GitHub Pages.
 
 ### Step 3: First Deployment
 
-#### Option A: Automatic Deployment (Recommended)
 1. Push your changes to the `main` branch:
 ```bash
 git add .
-git commit -m "Initial deployment setup"
+git commit -m "Setup GitHub Pages deployment with Actions"
 git push origin main
 ```
 
 2. Go to **Actions** tab to monitor the deployment progress
 3. Once completed, your site will be available at: `https://amarpreetbhatia.github.io`
 
-#### Option B: Manual Deployment
-1. Run the deployment command:
-```bash
-npm run deploy
-```
-
-2. This will:
-   - Build your project
-   - Create a `gh-pages` branch
-   - Push the built files to GitHub Pages
-
 ## 🔄 Continuous Deployment
 
 Once set up, your site will automatically deploy whenever you:
 
 1. Push changes to the `main` branch
-2. Create a pull request to the `main` branch
+2. Manually trigger the workflow from the Actions tab
 
 The GitHub Actions workflow will:
 - Install dependencies
 - Build the project
+- Configure GitHub Pages
 - Deploy to GitHub Pages
 
 ## 📁 Important Files
 
 ### Configuration Files
 - `vite.config.ts` - Base path configured for GitHub Pages
-- `package.json` - Build and deploy scripts
+- `package.json` - Build scripts
 - `.github/workflows/deploy.yml` - GitHub Actions workflow
 - `public/CNAME` - Custom domain configuration
 
 ### Build Output
 - `dist/` - Built files (created after `npm run build`)
-- `gh-pages/` - Deployment branch (created after deployment)
 
 ## 🐛 Troubleshooting
 
@@ -80,6 +68,7 @@ The GitHub Actions workflow will:
    - Check that the repository is public
    - Verify the repository name is exactly `amarpreetbhatia.github.io`
    - Ensure GitHub Actions is enabled in repository settings
+   - Check that Pages source is set to "GitHub Actions"
 
 2. **Build Failures**
    - Check the Actions tab for error logs
@@ -90,9 +79,10 @@ The GitHub Actions workflow will:
    - Check that the base path in `vite.config.ts` is correct
    - Verify all image paths are relative to the public folder
 
-4. **Custom Domain Issues**
-   - Ensure the CNAME file is in the `public/` folder
-   - Check DNS settings if using a custom domain
+4. **Deployment Not Working**
+   - Check the Actions tab for workflow runs
+   - Ensure the workflow completed successfully
+   - Check Pages settings in repository settings
 
 ### Debugging Steps
 
@@ -100,6 +90,7 @@ The GitHub Actions workflow will:
    - Go to Actions tab
    - Click on the latest workflow run
    - Review the build and deploy steps
+   - Look for any error messages
 
 2. **Test Locally**
    ```bash
@@ -111,12 +102,16 @@ The GitHub Actions workflow will:
    - Check the `dist/` folder after building
    - Ensure all assets are present
 
+4. **Check Pages Settings**
+   - Go to Settings > Pages
+   - Ensure source is set to "GitHub Actions"
+   - Check if there are any error messages
+
 ## 🔗 Useful Links
 
 - **GitHub Pages**: https://pages.github.com/
 - **GitHub Actions**: https://github.com/features/actions
 - **Vite Documentation**: https://vitejs.dev/guide/static-deploy.html
-- **gh-pages Package**: https://www.npmjs.com/package/gh-pages
 
 ## 📞 Support
 
