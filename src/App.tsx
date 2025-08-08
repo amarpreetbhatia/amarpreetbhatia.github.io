@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
 import { Button } from './components/ui/button'
 import { Linkedin, Mail, Github } from 'lucide-react'
+import AboutMe from './components/AboutMe'
 
 function App() {
   const [activeSection, setActiveSection] = useState('aboutme')
@@ -116,30 +117,10 @@ function App() {
         </div>
       </section>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-16">
-        {/* About Me Section */}
-        <section id="aboutme" className="mb-12">
-          <h1 className="text-3xl font-semibold text-white mb-6 relative">
-            Principal Cloud Architect & AI Architect in Sydney Australia
-            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
-          </h1>
-          <Card className="animate-in fade-in-50 duration-500">
-            <CardContent className="p-6">
-              <p className="text-gray-700 leading-relaxed">
-                Experienced <strong>Principal Cloud Architect</strong> and <strong>AI Architect in Sydney Australia</strong> with 20+ years in enterprise software engineering. 
-                As a <strong>Full-Stack Solutions Designer in Sydney Australia</strong>, I specialize in Java, Spring Boot, NodeJS, ReactJS, microservices architecture, 
-                and cloud-native solutions (AWS, Azure, GCP). Proven leadership as a <strong>Principal Solution Architect in Sydney</strong> steering multiple scrum teams, 
-                driving digital transformation, DevOps culture adoption, and platform modernization initiatives. 
-                Strong expertise as an <strong>AWS Architect in Sydney</strong> and <strong>GCP Architect in Sydney</strong> with hands-on experience in technical innovation, 
-                API management, CI/CD practices, and team mentorship. Certified AWS Solutions Architect and Kubernetes Developer, 
-                passionate about delivering scalable, resilient systems and enhancing engineering best practices. 
-                As a <strong>hands on Java and React Developer</strong>, I'm passionate about fostering innovation, 
-                implementing best practices, and enhancing development workflows to achieve operational excellence.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+             {/* Main Content */}
+       <main className="container mx-auto px-4 py-16">
+         {/* About Me Section */}
+         <AboutMe />
 
         {/* Skills Section */}
         <section id="skills" className="mb-12">
