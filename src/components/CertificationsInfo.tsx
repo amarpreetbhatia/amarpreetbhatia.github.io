@@ -1,4 +1,5 @@
 import { Card, CardContent } from './ui/card'
+import BackToTop from './BackToTop'
 
 const CertificationsInfo = () => {
   const certifications = [
@@ -28,6 +29,7 @@ const CertificationsInfo = () => {
           </ul>
         </CardContent>
       </Card>
+      <BackToTop />
     </section>
   )
 }

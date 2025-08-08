@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from './ui/accordion'
+import BackToTop from './BackToTop'
 
 const ExperienceInfo = () => {
   const caseStudies = [
@@ -90,6 +91,7 @@ const ExperienceInfo = () => {
           </AccordionItem>
         ))}
       </Accordion>
+      <BackToTop />
     </section>
   )
 }

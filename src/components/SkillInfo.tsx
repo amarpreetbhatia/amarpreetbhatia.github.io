@@ -1,4 +1,5 @@
 import { Card, CardContent } from './ui/card'
+import BackToTop from './BackToTop'
 
 const SkillInfo = () => {
   const skillCategories = [
@@ -104,6 +105,7 @@ const SkillInfo = () => {
           </Card>
         ))}
       </div>
+      <BackToTop />
     </section>
   )
 }
