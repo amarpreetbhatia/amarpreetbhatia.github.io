@@ -38,7 +38,7 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-900 to-blue-600">
+    <div className="min-h-screen bg-gradient-to-r from-orange-900 to-orange-600">
       {/* Header with Banner */}
       <header className="relative" role="banner">
         <div className="relative">
@@ -63,8 +63,8 @@ function App() {
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                        activeSection === item.id ? 'text-blue-600' : 'text-gray-600'
+                      className={`text-sm font-medium transition-colors hover:text-orange-600 ${
+                        activeSection === item.id ? 'text-orange-600' : 'text-gray-600'
                       }`}
                     >
                       {item.label}
@@ -83,7 +83,7 @@ function App() {
         <section id="aboutme" className="mb-12">
           <h1 className="text-3xl font-semibold text-white mb-6 relative">
             Principal Cloud Architect & AI Architect in Sydney Australia
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mt-2 rounded"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
           </h1>
           <Card className="animate-in fade-in-50 duration-500">
             <CardContent className="p-6">
@@ -106,7 +106,7 @@ function App() {
         <section id="skills" className="mb-12">
           <h2 className="text-3xl font-semibold text-white mb-6 relative">
             Core Competencies - Full-Stack Solutions Designer
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mt-2 rounded"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
           </h2>
           <Card className="animate-in fade-in-50 duration-500">
             <CardContent className="p-6">
@@ -126,7 +126,7 @@ function App() {
         <section id="experience" className="mb-12">
           <h2 className="text-3xl font-semibold text-white mb-6 relative">
             Professional Experience
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mt-2 rounded"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
           </h2>
           <div className="space-y-6">
             {[
@@ -163,13 +163,13 @@ function App() {
             ].map((job, index) => (
               <Card key={index} className="animate-in fade-in-50 duration-500">
                 <CardHeader>
-                  <CardTitle className="text-xl text-blue-600">{job.title}</CardTitle>
+                  <CardTitle className="text-xl text-orange-600">{job.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-gray-700">
                     {job.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
-                        <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         {point}
                       </li>
                     ))}
@@ -184,7 +184,7 @@ function App() {
         <section id="education" className="mb-12">
           <h2 className="text-3xl font-semibold text-white mb-6 relative">
             Education
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mt-2 rounded"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
           </h2>
           <Card className="animate-in fade-in-50 duration-500">
             <CardContent className="p-6">
@@ -199,7 +199,7 @@ function App() {
         <section id="certifications" className="mb-12">
           <h2 className="text-3xl font-semibold text-white mb-6 relative">
             Certifications
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mt-2 rounded"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
           </h2>
           <Card className="animate-in fade-in-50 duration-500">
             <CardContent className="p-6">
@@ -219,7 +219,7 @@ function App() {
         <section id="contact" className="mb-12">
           <h2 className="text-3xl font-semibold text-white mb-6 relative">
             Contact
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mt-2 rounded"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
           </h2>
           <Card className="animate-in fade-in-50 duration-500">
             <CardContent className="p-6">
