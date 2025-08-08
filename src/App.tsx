@@ -5,6 +5,9 @@ import { Linkedin, Mail, Github } from 'lucide-react'
 import AboutMe from './components/AboutMe'
 import SkillInfo from './components/SkillInfo'
 import ExperienceInfo from './components/ExperienceInfo'
+import EducationInfo from './components/EducationInfo'
+import CertificationsInfo from './components/CertificationsInfo'
+import ContactInfo from './components/ContactInfo'
 
 function App() {
   const [activeSection, setActiveSection] = useState('aboutme')
@@ -99,14 +102,14 @@ function App() {
             As a Principal Engineer at the intersection of Cloud Architecture, Platform Engineering, and Generative AI, I help organizations modernize their technology, automate their processes, and unlock new value.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in-50 duration-700 delay-300">
-            <Button 
-              onClick={() => scrollToSection('experience')}
-              className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-3 text-lg font-semibold"
-            >
-              View My Work
-            </Button>
-                         <Button 
+                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in-50 duration-700 delay-300">
+             <Button 
+               onClick={() => scrollToSection('experience')}
+               className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-3 text-lg font-semibold"
+             >
+               View My Work
+             </Button>
+             <Button 
                asChild
                className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-3 text-lg font-semibold"
              >
@@ -115,7 +118,18 @@ function App() {
                  Connect on LinkedIn
                </a>
              </Button>
-          </div>
+             <Button 
+               asChild
+               className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-3 text-lg font-semibold"
+             >
+               <a href="https://medium.com/@amarpreetbhatia" target="_blank" rel="noopener noreferrer">
+                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                   <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                 </svg>
+                 Read My Insights
+               </a>
+             </Button>
+           </div>
         </div>
       </section>
 
@@ -130,75 +144,14 @@ function App() {
           {/* Experience Section */}
           <ExperienceInfo />
 
-        {/* Education Section */}
-        <section id="education" className="mb-12">
-          <h2 className="text-3xl font-semibold text-white mb-6 relative">
-            Education
-            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
-          </h2>
-          <Card className="animate-in fade-in-50 duration-500">
-            <CardContent className="p-6">
-              <ul className="space-y-2 text-gray-700">
-                <li>Bachelor of Engineering (B.E.), Computer Science</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
+                  {/* Education Section */}
+          <EducationInfo />
 
-        {/* Certifications Section */}
-        <section id="certifications" className="mb-12">
-          <h2 className="text-3xl font-semibold text-white mb-6 relative">
-            Certifications
-            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
-          </h2>
-          <Card className="animate-in fade-in-50 duration-500">
-            <CardContent className="p-6">
-              <ul className="space-y-2 text-gray-700">
-                <li>AWS Certified Solutions Architect - Associate</li>
-                <li>Certified Kubernetes Application Developer (CKAD)</li>
-                <li>Certified SAFe® 5 Practitioner</li>
-                <li>Microsoft Certified: Azure Fundamentals</li>
-                <li>Architecting with Google Kubernetes Engine (Coursera)</li>
-                <li>AI-Powered Software and System Design (deeplearning.ai)</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
+                  {/* Certifications Section */}
+          <CertificationsInfo />
 
-        {/* Contact Section */}
-        <section id="contact" className="mb-12">
-          <h2 className="text-3xl font-semibold text-white mb-6 relative">
-            Contact
-            <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
-          </h2>
-          <Card className="animate-in fade-in-50 duration-500">
-            <CardContent className="p-6">
-              <p className="text-gray-700 mb-4">
-                If you would like to get in touch, please connect with me on LinkedIn.
-              </p>
-              <div className="flex space-x-4">
-                <Button asChild variant="outline">
-                  <a href="https://www.linkedin.com/in/amarpreetbhatia/" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="w-4 h-4 mr-2" />
-                    LinkedIn
-                  </a>
-                </Button>
-                <Button asChild variant="outline">
-                  <a href="mailto:contact@amarpreetbhatia.com">
-                    <Mail className="w-4 h-4 mr-2" />
-                    Email
-                  </a>
-                </Button>
-                <Button asChild variant="outline">
-                  <a href="https://github.com/amarpreetbhatia" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+          {/* Contact Section */}
+          <ContactInfo />
 
         {/* Footer */}
         <footer className="text-center py-8 text-white/70">
