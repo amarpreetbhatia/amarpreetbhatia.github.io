@@ -13,7 +13,7 @@ const AboutMe = () => {
         <CardContent className="p-8">
           <div className="flex flex-col items-center mb-8">
             <img 
-              src="/amarpreet_pic.png" 
+              src="./amarpreet_pic.png" 
               alt="Amarpreet Bhatia - Principal Engineer and Full Stack Solution Architect" 
               className="w-48 h-48 rounded-full object-cover border-4 border-orange-200 shadow-xl"
             />

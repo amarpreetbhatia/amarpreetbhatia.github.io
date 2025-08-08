@@ -58,7 +58,7 @@ function App() {
                     {/* Profile Picture */}
                     <div className="flex items-center">
                       <img 
-                        src="/profile_pic.png" 
+                        src="./profile_pic.png" 
                         alt="This is Amarpreet Bhatia's Portfolio website" 
                         className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-3 border-orange-300 shadow-lg"
                       />
