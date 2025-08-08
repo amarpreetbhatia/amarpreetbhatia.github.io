@@ -68,7 +68,7 @@ npm run dev
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
+- `npm run deploy` - Build and deploy to GitHub Pages
 
 ## 🎯 Sections
 
@@ -106,9 +106,30 @@ npm run build
 
 The built files will be in the `dist/` directory, ready for deployment.
 
-### GitHub Pages
+### GitHub Pages Deployment
 
-This project is configured for GitHub Pages deployment. The build output is optimized for static hosting.
+This project is configured for automatic deployment to GitHub Pages.
+
+#### Option 1: Manual Deployment
+```bash
+npm run deploy
+```
+
+#### Option 2: Automatic Deployment (Recommended)
+The site automatically deploys when you push to the `main` branch via GitHub Actions.
+
+1. Push your changes to the main branch
+2. GitHub Actions will automatically build and deploy
+3. Your site will be available at `https://amarpreetbhatia.github.io`
+
+#### GitHub Pages Setup
+1. Go to your repository settings
+2. Navigate to "Pages" section
+3. Set source to "GitHub Actions"
+4. Ensure the repository is public
+
+### Live Demo
+Visit: [https://amarpreetbhatia.github.io](https://amarpreetbhatia.github.io)
 
 ## 🔧 Configuration
 

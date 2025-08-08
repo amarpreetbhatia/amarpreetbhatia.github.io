@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
 import { Button } from './components/ui/button'
-import { Linkedin, Mail, Github } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
 import AboutMe from './components/AboutMe'
 import SkillInfo from './components/SkillInfo'
 import ExperienceInfo from './components/ExperienceInfo'
