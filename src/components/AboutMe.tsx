@@ -1,5 +1,4 @@
 import { Card, CardContent } from './ui/card'
-import BackToTop from './BackToTop'
 
 const AboutMe = () => {
   return (
@@ -49,7 +48,6 @@ const AboutMe = () => {
           </div>
         </CardContent>
       </Card>
-      <BackToTop />
     </section>
   )
 }

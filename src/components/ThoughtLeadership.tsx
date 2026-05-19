@@ -1,5 +1,4 @@
 import { Card, CardContent } from './ui/card'
-import BackToTop from './BackToTop'
 
 const pillars = [
   {
@@ -59,8 +58,6 @@ const ThoughtLeadership = () => {
           </Card>
         ))}
       </div>
-
-      <BackToTop />
     </section>
   )
 }

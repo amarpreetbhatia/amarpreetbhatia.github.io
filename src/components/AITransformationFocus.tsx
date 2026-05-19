@@ -1,5 +1,4 @@
 import { Card, CardContent } from './ui/card'
-import BackToTop from './BackToTop'
 
 const focusAreas = [
   {
@@ -68,8 +67,6 @@ const AITransformationFocus = () => {
           </Card>
         ))}
       </div>
-
-      <BackToTop />
     </section>
   )
 }

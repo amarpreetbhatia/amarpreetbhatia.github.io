@@ -1,5 +1,4 @@
 import { Card, CardContent } from './ui/card'
-import BackToTop from './BackToTop'
 
 const caseStudies = [
   {
@@ -59,8 +58,6 @@ const ExperienceInfo = () => {
           </Card>
         ))}
       </div>
-
-      <BackToTop />
     </section>
   )
 }

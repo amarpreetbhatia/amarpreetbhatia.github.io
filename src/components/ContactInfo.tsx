@@ -1,7 +1,6 @@
 import { Card, CardContent } from './ui/card'
 import { Button } from './ui/button'
 import { Linkedin, Mail } from 'lucide-react'
-import BackToTop from './BackToTop'
 
 const ContactInfo = () => {
   return (
@@ -37,7 +36,6 @@ const ContactInfo = () => {
           </div>
         </CardContent>
       </Card>
-      <BackToTop />
     </section>
   )
 }
