@@ -1,103 +1,93 @@
 import { Card, CardContent } from './ui/card'
 import BackToTop from './BackToTop'
 
+const skillCategories = [
+  {
+    title: 'Enterprise Architecture',
+    items: [
+      'AI-first reference architectures',
+      'Modernization roadmaps and target operating models',
+      'Hybrid cloud and integration strategy'
+    ]
+  },
+  {
+    title: 'AI Enablement',
+    items: [
+      'Retrieval-Augmented Generation (RAG)',
+      'Agentic workflow design',
+      'AI governance and trust frameworks'
+    ]
+  },
+  {
+    title: 'Platform Engineering',
+    items: [
+      'Golden path delivery experiences',
+      'Platform services and developer enablement',
+      'Infrastructure as code and self-service portals'
+    ]
+  },
+  {
+    title: 'Cloud & DevSecOps',
+    items: [
+      'Secure CI/CD and GitOps practices',
+      'Cloud-native resilience and operations',
+      'Compliance-aware automation'
+    ]
+  },
+  {
+    title: 'AI Engineering',
+    items: [
+      'Model orchestration and observability',
+      'Prompt engineering for enterprise workflows',
+      'Hybrid data and AI pipeline design'
+    ]
+  },
+  {
+    title: 'Enterprise Integration',
+    items: [
+      'API mesh and event-driven connectivity',
+      'Legacy modernization with secure interfaces',
+      'Data-to-decision integration patterns'
+    ]
+  },
+  {
+    title: 'Modern Frontend Platforms',
+    items: [
+      'Executive experience design for operations',
+      'Data-driven dashboards and intelligent applications',
+      'Pragmatic low-code and hybrid UI strategies'
+    ]
+  },
+  {
+    title: 'Observability & Governance',
+    items: [
+      'Risk-aware observability and analytics',
+      'Policy-driven controls and audit readiness',
+      'Trust, compliance and operational transparency'
+    ]
+  }
+]
+
 const SkillInfo = () => {
-  const skillCategories = [
-    {
-      title: "Cloud & System Design",
-      logos: [
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", alt: "AWS Logo", title: "AWS" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg", alt: "Kubernetes Logo", title: "Kubernetes" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg", alt: "GraphQL Logo", title: "GraphQL" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg", alt: "Kafka Logo", title: "Kafka" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg", alt: "RabbitMQ Logo", title: "RabbitMQ" }
-      ],
-      details: [
-        { label: "Core Architectures", value: "Microservices, Event-Driven, Serverless" },
-        { label: "API Design", value: "RESTful APIs, GraphQL" },
-        { label: "Security & Compliance", value: "OAuth2, OpenID Connect, OWASP" }
-      ]
-    },
-    {
-      title: "AI & Intelligent Engineering",
-      logos: [
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg", alt: "Spring Logo", title: "Spring AI" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg", alt: "GitHub Logo", title: "GitHub Copilot" }
-      ],
-      details: [
-        { label: "LLM Frameworks", value: "LlamaIndex, Spring AI, CrewAI" },
-        { label: "Core Concepts", value: "Retrieval-Augmented Generation (RAG)" },
-        { label: "AI-Augmented Development", value: "GitHub Copilot, Cursor" }
-      ]
-    },
-    {
-      title: "Platform Engineering & DevOps",
-      logos: [
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg", alt: "Docker Logo", title: "Docker" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg", alt: "Jenkins Logo", title: "Jenkins" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", alt: "Git Logo", title: "Git" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg", alt: "GitHub Actions Logo", title: "GitHub Actions" },
-      ],
-      details: [
-        { label: "Infrastructure", value: "Infrastructure as Code (IaC), AWS CDK, GitOps" },
-        { label: "Testing Methodologies", value: "TDD, BDD" }
-      ]
-    },
-    {
-      title: "Core Technologies",
-      logos: [
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", alt: "Java Logo", title: "Java" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg", alt: "Spring Boot Logo", title: "Spring Boot" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", alt: "Node.js Logo", title: "Node.js" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", alt: "React Logo", title: "React" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", alt: "Python Logo", title: "Python" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", alt: "PostgreSQL Logo", title: "PostgreSQL" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg", alt: "MongoDB Logo", title: "MongoDB" }
-      ],
-      details: [
-        { label: "Also proficient in", value: "Kotlin, NextJS, Angular, Oracle, SQL Server, Redis" }
-      ]
-    }
-  ]
-
   return (
-    <section id="skills" className="mb-12">
-      <h2 className="text-3xl font-semibold text-white mb-6 relative">
-        My Technical Skills
-        <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
-      </h2>
-      
-      <p className="text-white/90 text-lg mb-8 max-w-4xl">
-        My expertise spans across modern cloud architecture, AI-driven engineering, and full-stack development. Here are the core technologies and methodologies I use to build robust, scalable solutions.
-      </p>
+    <section id="skills" className="mb-16">
+      <div className="flex flex-col md:flex-row items-start justify-between gap-6 mb-8">
+        <div>
+          <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">Skills</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-white">Strategic capabilities for AI transformation and enterprise modernization.</h2>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {skillCategories.map((category, index) => (
-          <Card key={index} className="animate-in fade-in-50 duration-500">
+      <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        {skillCategories.map((category) => (
+          <Card key={category.title} className="border border-slate-800 bg-slate-900/95 shadow-xl shadow-slate-950/20">
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-orange-600 mb-4">
-                {category.title}
-              </h3>
-              
-              {/* Logo Grid */}
-              <div className="grid grid-cols-5 gap-3 mb-6">
-                {category.logos.map((logo, logoIndex) => (
-                  <div key={logoIndex} className="flex items-center justify-center p-2 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors">
-                    <img 
-                      src={logo.src} 
-                      alt={logo.alt} 
-                      title={logo.title}
-                      className="w-8 h-8 object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-              
-              {/* Details List */}
-              <ul className="space-y-2">
-                {category.details.map((detail, detailIndex) => (
-                  <li key={detailIndex} className="text-gray-700">
-                    <strong>{detail.label}:</strong> {detail.value}
+              <h3 className="text-xl font-semibold text-white mb-5">{category.title}</h3>
+              <ul className="space-y-4 text-slate-300">
+                {category.items.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -105,6 +95,7 @@ const SkillInfo = () => {
           </Card>
         ))}
       </div>
+
       <BackToTop />
     </section>
   )
