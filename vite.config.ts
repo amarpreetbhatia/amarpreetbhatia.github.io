@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    target: 'es2020',
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',

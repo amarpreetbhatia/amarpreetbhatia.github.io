@@ -11,6 +11,17 @@ import ContactInfo from './components/ContactInfo'
 import Navigation from './components/Navigation'
 import BackToTop from './components/BackToTop'
 
+function Logo() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path
+        fill="rgb(84, 84, 84)"
+        d="M 160 88 L 194 34 L 216 0 L 256 0 L 256 40 L 221.5 93.5 L 200 128 L 256 128 L 256 256 L 96 256 L 96 168 L 64.246 220 L 40 256 L 0 256 L 0 216 L 34 162 L 56 128 L 0 128 L 0 0 L 160 0 Z"
+      />
+    </svg>
+  )
+}
+
 function App() {
   const [activeSection, setActiveSection] = useState('aboutme')
   const [theme, setTheme] = useState<'light' | 'dark'>('dark')
@@ -76,13 +87,24 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <header className="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+    <div className="relative min-h-screen overflow-hidden bg-[#f0f0ee] text-slate-950">
+      <a
+        href="#main-content"
+        className="skip-link absolute left-4 top-4 z-50 rounded-md bg-slate-950 px-3 py-2 text-sm font-medium text-white opacity-0 transition-opacity duration-200 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+      >
+        Skip to main content
+      </a>
+      <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-[#f0f0ee]/95 backdrop-blur-xl">
         <div className="container mx-auto px-4">
           <div className="flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-cyan-300/80">Amarpreet Bhatia</p>
-              <p className="text-sm font-semibold text-slate-100">AI Enablement Architect | Enterprise Modernization | Platform Engineering</p>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center rounded-full w-10 h-10 sm:w-11 sm:h-11 shrink-0" style={{ backgroundColor: '#EDEDED' }}>
+                <Logo />
+              </div>
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.32em] text-gray-500">Amarpreet Bhatia</p>
+                <p className="text-sm font-semibold text-slate-950">AI Enablement Architect | Enterprise Modernization | Platform Engineering</p>
+              </div>
             </div>
 
             <div className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
@@ -91,10 +113,10 @@ function App() {
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 variant="ghost"
                 size="icon"
-                className="text-slate-200 hover:text-white"
+                className="text-slate-700 hover:text-slate-900"
                 aria-label="Toggle light and dark mode"
               >
-                {theme === 'dark' ? <SunMedium className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {theme === 'dark' ? <SunMedium className="w-5 h-5" aria-hidden="true" /> : <Moon className="w-5 h-5" aria-hidden="true" />}
               </Button>
             </div>
           </div>
@@ -105,15 +127,15 @@ function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.12),_transparent_24%)] pointer-events-none" />
         <div className="relative container mx-auto">
           <div className="mx-auto max-w-5xl text-center">
-            <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80 mb-4">AI Enablement Architect | Enterprise Modernization Leader</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white">Enterprise AI transformation leadership for cloud-native platforms and governance-ready delivery.</h1>
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">I partner with executive teams to define AI-first strategies, modernize platform ecosystems, and deliver measurable value with secure, scalable engineering and platform modernization programs.</p>
+            <p className="text-[12px] uppercase tracking-[0.32em] text-blue-500/90 mb-4">AI Enablement Architect | Enterprise Modernization Leader</p>
+            <h1 className="text-[1.75rem] sm:text-[2.5rem] leading-[1.1] font-semibold tracking-tight text-gray-950">Enterprise AI transformation leadership for cloud-native platforms and governance-ready delivery.</h1>
+            <p className="mx-auto mt-6 max-w-3xl text-[13px] leading-7 text-gray-500">I partner with executive teams to define AI-first strategies, modernize platform ecosystems, and deliver measurable value with secure, scalable engineering and platform modernization programs.</p>
           </div>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-5">
-            <Button onClick={() => scrollToSection('ai-transformation')} className="w-full sm:w-auto bg-cyan-400 text-slate-950 hover:bg-cyan-300 px-6 py-3 font-semibold shadow-lg shadow-cyan-400/20">Explore AI Strategy</Button>
-            <Button asChild className="w-full sm:w-auto bg-slate-900/90 text-white border border-slate-700 hover:bg-slate-800 px-6 py-3 font-semibold shadow-sm">
-              <a href="https://www.linkedin.com/in/amarpreetbhatia/" target="_blank" rel="noopener noreferrer"><Linkedin className="w-4 h-4 mr-2 inline-block" />Connect on LinkedIn</a>
+            <Button onClick={() => scrollToSection('ai-transformation')} className="w-full sm:w-auto bg-blue-500 text-white hover:bg-blue-600 px-6 py-3 font-semibold shadow-lg shadow-blue-500/20">Explore AI Strategy</Button>
+            <Button asChild className="w-full sm:w-auto bg-white text-slate-950 border border-slate-300 hover:bg-slate-100 px-6 py-3 font-semibold shadow-sm">
+              <a href="https://www.linkedin.com/in/amarpreetbhatia/" target="_blank" rel="noopener noreferrer"><Linkedin className="w-4 h-4 mr-2 inline-block" aria-hidden="true" />Connect on LinkedIn</a>
             </Button>
           </div>
 
@@ -128,7 +150,7 @@ function App() {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 py-8">
+      <main id="main-content" className="container mx-auto px-4 py-8">
         <AboutMe />
         <AITransformationFocus />
         <ExperienceInfo />

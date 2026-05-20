@@ -23,13 +23,13 @@ const ContactInfo = () => {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild variant="secondary" className="w-full sm:w-auto px-6 py-3">
               <a href="https://www.linkedin.com/in/amarpreetbhatia/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-4 h-4 mr-2 inline-block" />
+                <Linkedin className="w-4 h-4 mr-2 inline-block" aria-hidden="true" />
                 Connect on LinkedIn
               </a>
             </Button>
             <Button asChild variant="secondary" className="w-full sm:w-auto px-6 py-3">
               <a href="mailto:contact@amarpreetbhatia.com">
-                <Mail className="w-4 h-4 mr-2 inline-block" />
+                <Mail className="w-4 h-4 mr-2 inline-block" aria-hidden="true" />
                 Email Me
               </a>
             </Button>
