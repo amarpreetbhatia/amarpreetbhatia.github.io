@@ -1,26 +1,37 @@
+import { useState, useEffect } from 'react'
 import { Button } from './ui/button'
-import { ChevronUp, Sparkles } from 'lucide-react'
+import { ChevronUp } from 'lucide-react'
 
 const BackToTop = () => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 420)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  if (!isVisible) return null
+
   return (
-    <div className="flex justify-center mt-8">
+    <div className="fixed bottom-5 right-5 z-50 transition-opacity duration-300 sm:bottom-6 sm:right-6">
       <Button
+        type="button"
         onClick={scrollToTop}
-        className="group relative overflow-hidden bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        variant="secondary"
+        className="inline-flex items-center gap-2 rounded-full bg-slate-900/95 text-slate-100 px-4 py-3 shadow-2xl shadow-slate-950/40 hover:bg-slate-800"
+        aria-label="Scroll back to top"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div className="relative flex items-center space-x-2">
-          <Sparkles className="w-4 h-4 animate-pulse" />
-          <span className="font-semibold">Return to the Summit</span>
-          <ChevronUp className="w-4 h-4 group-hover:animate-bounce" />
-        </div>
+        <ChevronUp className="w-4 h-4" aria-hidden="true" />
+        <span className="hidden sm:inline">Back to top</span>
       </Button>
     </div>
   )

@@ -1,5 +1,4 @@
 import { Card, CardContent } from './ui/card'
-import BackToTop from './BackToTop'
 
 const CertificationsInfo = () => {
   const certifications = [
@@ -13,7 +12,7 @@ const CertificationsInfo = () => {
 
   return (
     <section id="certifications" className="mb-12">
-      <h2 className="text-3xl font-semibold text-white mb-6 relative">
+      <h2 className="text-3xl font-semibold text-slate-950 mb-6 relative">
         Certifications
         <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mt-2 rounded"></div>
       </h2>
@@ -29,7 +28,6 @@ const CertificationsInfo = () => {
           </ul>
         </CardContent>
       </Card>
-      <BackToTop />
     </section>
   )
 }
