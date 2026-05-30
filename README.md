@@ -71,16 +71,13 @@ npm run dev
 
 ## 📈 Google Analytics
 
-This project supports Google Analytics using a Vite environment variable so the tracking ID is not committed to the repository.
+The Google Analytics tag is now embedded directly in `index.html` for GitHub Pages deployments.
 
-1. Copy `.env.example` to `.env.local`
-2. Set your measurement ID in `.env.local`:
-   ```bash
-   VITE_GA_MEASUREMENT_ID=G-SNWEH0RQBD
-   ```
-3. Build for production with `npm run build`
+- This means the GA script is loaded as a static snippet on every page.
+- It does not depend on runtime Vite environment variables on GitHub Pages.
+- If you want to keep the ID out of the repo in a CI build, you can still use `VITE_GA_MEASUREMENT_ID` at build time, but GitHub Pages will not provide it at runtime.
 
-The analytics script loads only in production when `VITE_GA_MEASUREMENT_ID` is defined.
+The current script uses the measurement ID `G-SNWEH0RQBD`.
 
 ## 🎯 Sections
 
