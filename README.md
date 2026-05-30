@@ -69,6 +69,19 @@ npm run dev
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
+## 📈 Google Analytics
+
+This project supports Google Analytics using a Vite environment variable so the tracking ID is not committed to the repository.
+
+1. Copy `.env.example` to `.env.local`
+2. Set your measurement ID in `.env.local`:
+   ```bash
+   VITE_GA_MEASUREMENT_ID=G-SNWEH0RQBD
+   ```
+3. Build for production with `npm run build`
+
+The analytics script loads only in production when `VITE_GA_MEASUREMENT_ID` is defined.
+
 ## 🎯 Sections
 
 The portfolio includes the following sections:
